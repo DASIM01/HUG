@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TON CUL</title>
+    <style>
+        /* Styles généraux */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Style du bouton */
+        #playButton {
+            background: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: #ff758c;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Effet au survol */
+        #playButton:hover {
+            background: #ff758c;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Effet au clic */
+        #playButton:active {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+
+    <button id="playButton">▶ SUCE MA BITE</button>
+    <audio id="audio" src="son.mp3"></audio>
+
+    <script>
+        const button = document.getElementById("playButton");
+        const audio = document.getElementById("audio");
+
+        button.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();
+                button.textContent = "⏸ Arrêter le Son";
+            } else {
+                audio.pause();
+                button.textContent = "▶ Jouer le Son";
+            }
+        });
+    </script>
+
+</body>
+</html>
